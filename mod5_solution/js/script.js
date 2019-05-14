@@ -82,10 +82,10 @@ $ajaxUtils.sendGetRequest(
 // main page (index.html).
 function buildAndShowHomeHTML (categories) {
 
-	// Load home snippet page
-	$ajaxUtils.sendGetRequest(
-		homeHtmlUrl,
-		function (homeHtml) {
+// Load home snippet page
+$ajaxUtils.sendGetRequest(
+  homeHtmlUrl,
+  function (homeHtml) {
 
     //Call chooseRandomCategory, passing it retrieved 'categories'
     var randomCategory = chooseRandomCategory(categories);
@@ -96,15 +96,15 @@ function buildAndShowHomeHTML (categories) {
     var homeHtmlToInsertIntoMainPage = "'" + chosenCategoryShortName + "'";
 
     var html =
-    	insertProperty(homeHtml,
-      	"randomCategoryShortName",
-      	homeHtmlToInsertIntoMainPage);
+      insertProperty(homeHtml,
+      "randomCategoryShortName",
+      homeHtmlToInsertIntoMainPage);
 
     //Insert the the produced HTML into the main page
     insertHtml("#main-content", html);
 
     },
-    false); // False here because we are getting just regular HTML from the server, so no need to process JSON.
+  false); // False here because we are getting just regular HTML from the server, so no need to process JSON.
 }
 
 
